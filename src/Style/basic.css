@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #edf0f6;
+}
+
+.userLogo {
+    background-color: #9ba6c4;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userLogo p {
+    position: static;
+    color: white;
+    font-size: 0.9rem;
+}
+
+p, button {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #14275a;
+}
+
+h1 {
+    font-weight: 600;
+    color: #14275a;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #14275a;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #14275a;
+}
+
+h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #14275a;
+}
+
+.linie {
+    height: 1px;
+    display: block;
+    background-color: #c9c9c9;
+}
+
+.app {
+    display: flex;
+}
+
+.main {
+    margin-left: 210px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.main .content {
+    width: 700px;
+    border-right: 1px #c9c9c9 solid;
+    border-left: 1px #c9c9c9 solid;
+
+    padding: 25px 50px;
+}
+
+.post {
+    display: flex;
+    background-color: transparent;
+    border-radius: 20px;
+    border: white 6px solid;
+}
+
+.post .mark {
+    height: 160px;
+    width: 160px;
+    background-color: #b2edff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    z-index: -1;
+}
+
+.post .informations {
+    background-color: white;
+    flex-grow: 1;
+    margin-left: -20px;
+    z-index: -2;
+    padding: 10px;
+    padding-left: 40px;
+    position: relative;
+}
+
+.post p,
+.post h4 {
+    color: #9ba6c4;
+}
+
+.post h4 {
+    margin-top: 5px;
+    width: 490px;
+    overflow: hidden;
+}
+
+.post .date {
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px #c9c9c9 solid;
+    padding-bottom: 15px;
+}
+
+input, textarea {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #14275a;
+    border: solid #9BA6C4 1px;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 1px;
+    height: 20px;
+}
+
+input:focus, textarea:focus{
+    border: none;
+    outline: none;
+    border: solid #256fdf 2px;
+    margin: 0;
+}
+
+.middle {
+    text-align: center;
+}
+
+button {
+    background-color: #256fdf;
+    color: white;
+    outline: none;
+    border: none;
+    padding: 7px;
+    border-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+}

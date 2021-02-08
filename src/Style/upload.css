@@ -1,0 +1,61 @@
+.content .create .section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.content .create .section p {
+    margin-bottom: 15px;
+}
+
+.content .create .section .description {
+    height: 100px;
+    width: calc(100% - 16px);
+}
+
+textarea {
+    resize: none;
+}
+
+.content .create .section .divS2 {
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+}
+
+.content .create .section .colors {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.content .create .section .colors .color {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.content .create .section .colors .selected {
+    border: #707070 3px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.content .create .section .divS2 button{
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+}
+
+.content .preview {
+    margin-top: 30px;
+    border-top: 1px #c9c9c9 solid;
+}
+
+.content .preview #title {
+    margin: 30px 0;
+}
+
+
+

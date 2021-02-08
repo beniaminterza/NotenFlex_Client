@@ -1,0 +1,54 @@
+
+.home .filter {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.home .filter .selected {
+    color: #256fdf;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.posts > .postComplete {
+    margin: 7.5px 0;
+}
+
+.posts > .postComplete:first-child {
+    margin-top: 25px;
+}
+
+.postComplete .userLogo {
+    height: 1.4rem;
+    width: 1.4rem;
+}
+
+.postComplete .icon {
+    font-size: 1.4rem;
+}
+
+.postComplete .postInformations {
+    display: flex;
+    justify-content: space-between;
+}
+
+.postComplete .postInformations .user,
+.postComplete .postInformations .like {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.postComplete .postInformations p:nth-child(2) {
+    color: #9ba6c4;
+}
+
+.postComplete .postInformations {
+    margin: 10px 5px;
+    margin-bottom: 0;
+}
