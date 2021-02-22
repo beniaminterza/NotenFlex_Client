@@ -40,7 +40,7 @@ export default function Upload({ setUrl }) {
         axios
             .post("http://localhost:9998/NFlex/addPost", data, axiosConfig)
             .then((response) => {
-                window.location.replace("/");
+                window.location.replace("#/");
             });
     }
 
