@@ -29,7 +29,8 @@ body {
     font-size: 0.9rem;
 }
 
-p, button {
+p,
+button {
     font-weight: 600;
     font-size: 1.1rem;
     color: #14275a;
@@ -70,38 +71,69 @@ h4 {
 }
 
 .main {
-    margin-left: 270px;
+    margin-left: calc(12rem + 60px);
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    padding: 50px 0;
+    padding: 3.125rem 0;
 }
-
 .main .content {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     border-right: 1px #c9c9c9 solid;
     border-left: 1px #c9c9c9 solid;
 
-    padding: 25px 50px;
+    padding: 1.56rem 3.125rem;
+}
+
+@media only screen and (max-width: 1050px){
+    .open {
+        display: block;
+        z-index: 5;
+    }
+    .open .back {
+        color: red;
+        position: absolute;
+        right: 0rem;
+        background-color: white;
+        padding: 1rem;
+        display: block;
+        padding-top: 0;
+        cursor: pointer;
+    }
+    .close {
+        display: none;
+    }
+    .main {
+        width: 100%;
+        margin: 0;
+        padding-top: 5rem;
+    }
+    .main .content {
+        width: 90%;
+        border: none;
+        padding: 0;
+    }
+
 }
 
 .post {
     display: flex;
     background-color: transparent;
-    border-radius: 20px;
-    border: white 6px solid;
+    border-radius: 1.3rem;
+    border: white 0.4rem solid;
 }
 
 .post .mark {
-    height: 160px;
-    width: 160px;
+    height: 10rem;
+    width: 10rem;
     background-color: #b2edff;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 0.3125rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
     z-index: -1;
 }
 
@@ -109,10 +141,10 @@ h4 {
     overflow: hidden;
     background-color: white;
     flex-grow: 1;
-    margin-left: -20px;
+    margin-left: -1.25rem;
     z-index: -2;
-    padding: 10px;
-    padding-left: 40px;
+    padding: 0.625rem;
+    padding-left: 2.5rem;
     position: relative;
 }
 
@@ -122,15 +154,15 @@ h4 {
 }
 
 .post h4 {
-    margin-top: 5px;
-    width: 490px;
+    margin-top: 0.3125rem;
+    max-width: 30.625rem;
     overflow: hidden;
 }
 
 .post .date {
     position: absolute;
-    bottom: 10px;
-    left: 40px;
+    bottom: 0.625rem;
+    left: 2.5rem;
 }
 
 .head {
@@ -138,25 +170,51 @@ h4 {
     justify-content: space-between;
     align-items: baseline;
     border-bottom: 1px #c9c9c9 solid;
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
 }
 
-input, textarea {
+@media only screen and (max-width: 600px) {
+    .post {
+        flex-direction: column;
+    }
+    .post .mark {
+        width: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1.25rem;
+    }
+    .post .informations {
+        margin-left: 0;
+        padding: 1.25rem;
+        text-align: center;
+        margin-top: -1.25rem;
+        padding-top: 2.5rem;
+    }
+    .post .date {
+        position:relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+input,
+textarea {
     font-weight: 600;
     font-size: 1.1rem;
     color: #14275a;
-    border: solid #9BA6C4 1px;
-    border-radius: 5px;
-    padding: 7px;
-    margin: 1px;
-    height: 20px;
+    border: solid #9ba6c4 1px;
+    border-radius: 0.3125rem;
+    padding: 0.4375rem;
+    margin: 0.0625rem;
+    height: 1.25rem;
 }
 
 input::placeholder {
     color: #9ba6c4;
 }
 
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
     border: none;
     outline: none;
     border: solid #256fdf 2px;
@@ -172,8 +230,8 @@ button {
     color: white;
     outline: none;
     border: none;
-    padding: 7px;
-    border-radius: 20px;
-    width: 150px;
+    padding: 0.4375rem;
+    border-radius: 1.25rem;
+    width: 9.375rem;
     cursor: pointer;
 }

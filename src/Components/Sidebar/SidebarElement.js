@@ -6,6 +6,7 @@ export default function SidebarElement(props) {
     return (
         <Link
             to={props.link}
+            onClick={props.closeHandler}
             className={
                 (props.url === props.link && props.url) ||
                 (props.altLink !== undefined && props.altLink === props.url)

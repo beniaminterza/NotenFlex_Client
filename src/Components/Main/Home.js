@@ -59,6 +59,7 @@ export default function Home({ setUrl }) {
 
     return (
         <div className="home main">
+            
             <div className="content">
                 <div className="head">
                     <h2>Feed</h2>

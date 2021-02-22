@@ -98,7 +98,6 @@ export default function Profile({ match, setUrl }) {
                     <h2>Profile</h2>
                     <InputC
                         type="text"
-                        width="150px"
                         value={search}
                         setValue={setSearch}
                         placeholder="Search"
