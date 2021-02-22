@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/NotenFlex_Client/static/css/main.8152eeb7.chunk.css",
-    "main.js": "/NotenFlex_Client/static/js/main.5ce33874.chunk.js",
-    "main.js.map": "/NotenFlex_Client/static/js/main.5ce33874.chunk.js.map",
+    "main.js": "/NotenFlex_Client/static/js/main.b5447abb.chunk.js",
+    "main.js.map": "/NotenFlex_Client/static/js/main.b5447abb.chunk.js.map",
     "runtime-main.js": "/NotenFlex_Client/static/js/runtime-main.ea944116.js",
     "runtime-main.js.map": "/NotenFlex_Client/static/js/runtime-main.ea944116.js.map",
     "static/js/2.c11bc2e9.chunk.js": "/NotenFlex_Client/static/js/2.c11bc2e9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ea944116.js",
     "static/js/2.c11bc2e9.chunk.js",
     "static/css/main.8152eeb7.chunk.css",
-    "static/js/main.5ce33874.chunk.js"
+    "static/js/main.b5447abb.chunk.js"
   ]
 }
