@@ -1,16 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InputC from "../InputC";
 import "../../Style/upload.css";
 import ColorSelect from ".//ColorSelect";
 import Post from "../Post";
+import axios from "axios";
 
-export default function Upload() {
-    const [color, setColor] = useState("orange");
+export default function Upload({ setUrl }) {
+    const [color, setColor] = useState("green");
     const [fach, setFach] = useState("Informatik");
-    const [beschreibung, setBeschreibung] = useState("Describe the exam")
-    const [datum, setDatum] = useState(new Date().toJSON().slice(0,10))
+    const [beschreibung, setBeschreibung] = useState("Describe the exam");
+    const [date] = useState(new Date());
+    const [datum, setDatum] = useState(
+        new Date(date.getTime() + new Date().getTimezoneOffset() * -60 * 1000)
+            .toISOString()
+            .slice(0, 19)
+    );
     const [note, setNote] = useState("9");
 
+    useEffect(() => {
+        setUrl("/upload");
+    }, []);
+
+    function publish() {
+        let axiosConfig = {
+            headers: {
+                "Content-Type": "application/json;charset=UTF-8",
+                "Access-Control-Allow-Origin": "*",
+            },
+        };
+        let data = {
+            user: localStorage.getItem("username"),
+            fach: fach,
+            beschreibung: beschreibung,
+            note: note,
+            color: color,
+            date: datum
+        };
+        console.log(data)
+        axios
+            .post("http://localhost:9998/NFlex/addPost", data, axiosConfig)
+            .then((response) => {
+                window.location.replace("/");
+            });
+    }
 
     return (
         <div className="main">
@@ -27,8 +59,8 @@ export default function Upload() {
                                 placeholder={"f.ex. 9"}
                                 width="50px"
                                 name="middle"
-                                value = {note}
-                                setValue = {setNote}
+                                value={note}
+                                setValue={setNote}
                             />
                         </div>
                         <div>
@@ -36,21 +68,21 @@ export default function Upload() {
                             <InputC
                                 type={"text"}
                                 placeholder={"f.ex Informatik"}
-                                width="300px"
+                                width="250px"
                                 name=""
-                                value = {fach}
-                                setValue = {setFach}
+                                value={fach}
+                                setValue={setFach}
                             />
                         </div>
                         <div>
                             <p>Date</p>
                             <InputC
-                                type={"date"}
+                                type={"datetime-local"}
                                 placeholder={"Informatik"}
-                                width="150px"
+                                width="250px"
                                 name=""
-                                value = {datum}
-                                setValue = {setDatum}
+                                value={datum}
+                                setValue={setDatum}
                             />
                         </div>
                     </div>
@@ -62,9 +94,10 @@ export default function Upload() {
                                 name="Text1"
                                 cols="40"
                                 rows="5"
-                                value = {beschreibung}
-                                onChange={(e)=> setBeschreibung(e.target.value)}
-                
+                                value={beschreibung}
+                                onChange={(e) =>
+                                    setBeschreibung(e.target.value)
+                                }
                             ></textarea>
                         </div>
                         <div className="divS2">
@@ -107,13 +140,19 @@ export default function Upload() {
                                     setColor={setColor}
                                 />
                             </div>
-                            <button>Publish</button>
+                            <button onClick={publish}>Publish</button>
                         </div>
                     </div>
                 </div>
                 <div className="preview">
                     <h3 id="title">Preview</h3>
-                    <Post note={note} fach={fach} beschreibung={beschreibung} datum={datum} color={color}/>
+                    <Post
+                        note={note}
+                        fach={fach}
+                        beschreibung={beschreibung}
+                        datum={datum.replace("T", " ")}
+                        color={color}
+                    />
                 </div>
             </div>
         </div>

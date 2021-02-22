@@ -74,3 +74,6 @@
     color: #14275A;
 }
 
+.sidebar .account {
+    pointer-events: none;
+}

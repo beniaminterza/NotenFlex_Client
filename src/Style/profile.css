@@ -1,0 +1,72 @@
+.main .content .profile .userLogo {
+    width: 160px;
+    height: 160px;
+}
+
+.main .content .profile .userLogo p {
+    font-size: 6rem;
+}
+
+.main .content .profile {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.main .content .profile .informations {
+    flex-grow: 1;
+    }
+
+.main .content .profile .informations .title {
+
+   display: flex; 
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
+}
+.main .unfollow {
+    color: #256fdf;
+    background-color: white;
+    border: 2px solid #256fdf;
+}
+
+
+.main .content .profile .data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .content .profile .data .dataElement {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.main .content .profile .data .dataElement p {
+    color: #9ba6c4;
+}
+
+.main .content .posts {
+    border-top: 1px #c9c9c9 solid;
+    padding-top: 25px;
+}
+
+.profile input {
+    background: url("../Photos/search.svg") no-repeat scroll 4px 4px;
+    background-size: 8%;
+    background-position-y: center;
+    background-position-x: 7px;
+    padding-left: 30px;
+}
+
+.main .content .search {
+    margin-top: 25px;
+}
+
+.main .content .mainInfos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+

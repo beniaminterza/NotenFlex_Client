@@ -19,6 +19,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+.user {
+    text-decoration: none;
+}
 
 .userLogo p {
     position: static;
@@ -35,6 +38,7 @@ p, button {
 h1 {
     font-weight: 600;
     color: #14275a;
+    font-size: 4.5rem;
 }
 
 h2 {
@@ -66,7 +70,7 @@ h4 {
 }
 
 .main {
-    margin-left: 210px;
+    margin-left: 270px;
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -102,6 +106,7 @@ h4 {
 }
 
 .post .informations {
+    overflow: hidden;
     background-color: white;
     flex-grow: 1;
     margin-left: -20px;
@@ -145,6 +150,10 @@ input, textarea {
     padding: 7px;
     margin: 1px;
     height: 20px;
+}
+
+input::placeholder {
+    color: #9ba6c4;
 }
 
 input:focus, textarea:focus{

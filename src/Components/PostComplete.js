@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Post from "../Components/Post";
 import UserLogo from "../Components/UserLogo";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function PostComplete({
     user,
@@ -11,9 +13,34 @@ export default function PostComplete({
     likes,
     liked,
     color,
+    myUser,
+    postID,
 }) {
+    const [hasLiked, setHasLiked] = useState(liked);
+    const [likeCounter, setLikeCounter] = useState(likes);
+
+    function like() {
+        axios
+            .get(
+                `http://localhost:9998/NFlex/likePost?user=${user}&postID=${postID}&myUser=${myUser}`
+            )
+            .then((response) => {
+                console.log(response.data);
+                if (response.data.status) {
+                    if (hasLiked) setLikeCounter(likeCounter - 1);
+                    else setLikeCounter(likeCounter + 1);
+                    setHasLiked(!hasLiked);
+                    console.log(myUser + " liked " + postID + " from " + user);
+                }
+            });
+    }
+
+    useEffect(() => {
+        console.log("user: " + myUser);
+    }, [myUser]);
+
     return (
-        <div className="postComplete">
+        <div className="postComplete" onDoubleClick={like}>
             <Post
                 fach={fach}
                 note={note}
@@ -22,23 +49,27 @@ export default function PostComplete({
                 color={color}
             />
             <div className="postInformations">
-                <div className="user" >
+                <Link to={`/profile/${user}`} className="user">
                     <UserLogo name={Array.from(user)[5].toUpperCase()} />
                     <p>{user}</p>
-                </div>
+                </Link>
                 <div
                     className="like"
-                    style={liked ? { color: "#FF6D6D" } : { color: "#9BA6C4" }}
+                    style={
+                        hasLiked ? { color: "#FF6D6D" } : { color: "#9BA6C4" }
+                    }
                 >
                     <div className="icon">
                         <i className="fas fa-heart"></i>
                     </div>
                     <p
                         style={
-                            liked ? { color: "#FF6D6D" } : { color: "#9BA6C4" }
+                            hasLiked
+                                ? { color: "#FF6D6D" }
+                                : { color: "#9BA6C4" }
                         }
                     >
-                        {likes} Likes
+                        {likeCounter} Likes
                     </p>
                 </div>
             </div>

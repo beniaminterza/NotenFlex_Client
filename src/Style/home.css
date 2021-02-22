@@ -1,8 +1,12 @@
-
 .home .filter {
     display: flex;
     gap: 10px;
     padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.home .filter p:hover {
+    color: #256fdf;
 }
 
 .home .filter .selected {
@@ -26,6 +30,10 @@
 .postComplete .userLogo {
     height: 1.4rem;
     width: 1.4rem;
+}
+
+.postComplete {
+    cursor: pointer;
 }
 
 .postComplete .icon {
