@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/NotenFlex_Client/static/css/main.8152eeb7.chunk.css",
-    "main.js": "/NotenFlex_Client/static/js/main.b5447abb.chunk.js",
-    "main.js.map": "/NotenFlex_Client/static/js/main.b5447abb.chunk.js.map",
+    "main.js": "/NotenFlex_Client/static/js/main.263b2bae.chunk.js",
+    "main.js.map": "/NotenFlex_Client/static/js/main.263b2bae.chunk.js.map",
     "runtime-main.js": "/NotenFlex_Client/static/js/runtime-main.ea944116.js",
     "runtime-main.js.map": "/NotenFlex_Client/static/js/runtime-main.ea944116.js.map",
-    "static/js/2.c11bc2e9.chunk.js": "/NotenFlex_Client/static/js/2.c11bc2e9.chunk.js",
-    "static/js/2.c11bc2e9.chunk.js.map": "/NotenFlex_Client/static/js/2.c11bc2e9.chunk.js.map",
+    "static/js/2.e916f805.chunk.js": "/NotenFlex_Client/static/js/2.e916f805.chunk.js",
+    "static/js/2.e916f805.chunk.js.map": "/NotenFlex_Client/static/js/2.e916f805.chunk.js.map",
     "index.html": "/NotenFlex_Client/index.html",
     "static/css/main.8152eeb7.chunk.css.map": "/NotenFlex_Client/static/css/main.8152eeb7.chunk.css.map",
-    "static/js/2.c11bc2e9.chunk.js.LICENSE.txt": "/NotenFlex_Client/static/js/2.c11bc2e9.chunk.js.LICENSE.txt",
+    "static/js/2.e916f805.chunk.js.LICENSE.txt": "/NotenFlex_Client/static/js/2.e916f805.chunk.js.LICENSE.txt",
     "static/media/logo.cbf6562a.svg": "/NotenFlex_Client/static/media/logo.cbf6562a.svg",
     "static/media/profile.css": "/NotenFlex_Client/static/media/search.b94db18f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ea944116.js",
-    "static/js/2.c11bc2e9.chunk.js",
+    "static/js/2.e916f805.chunk.js",
     "static/css/main.8152eeb7.chunk.css",
-    "static/js/main.b5447abb.chunk.js"
+    "static/js/main.263b2bae.chunk.js"
   ]
 }
