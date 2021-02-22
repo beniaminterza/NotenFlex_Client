@@ -9,7 +9,7 @@ import Login from "./Components/SignIn/SignIn";
 import Register from "./Components/SignIn/Register";
 import axios from "axios";
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
     const [url, setUrl] = useState(window.location.pathname);
