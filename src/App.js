@@ -14,12 +14,13 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 export default function App() {
     const [url, setUrl] = useState(window.location.pathname);
     const [user, setUser] = useState();
-    const [checkServer, setCheckServer] = useState(false)
-    
+    const [checkServer, setCheckServer] = useState(false);
+
     useEffect(() => {
-        console.log("Check Server")
+        console.log("Check Server");
         if (!url.includes("/login") && !url.includes("/register")) {
             if (!loadLocalStorage()) {
+                console.log("it should redirect !!")
                 redirect();
             } else {
                 setUser(localStorage.getItem("username"));
@@ -29,29 +30,40 @@ export default function App() {
                     .get(
                         `http://localhost:9998/NFlex/checkLogin?user=${username}&password=${password}`
                     )
-                    .then((response) => {
-                        let data = response.data;
-                        if (!data.status) {
-                            redirect();
-                        } else console.log("Jooooooo");
-                    }, (error) => {
-                        setTimeout(()=>setCheckServer(prev => !prev), 2000)
-                    });
+                    .then(
+                        (response) => {
+                            let data = response.data;
+                            if (!data.status) {
+                                redirect();
+                            } else console.log("Jooooooo");
+                        },
+                        (error) => {
+                            setTimeout(
+                                () => setCheckServer((prev) => !prev),
+                                2000
+                            );
+                        }
+                    );
             }
         }
     }, [checkServer]);
 
     function redirect() {
-        window.location.replace("/#/login");
+        //window.location.replace(window.location.pathname + "#/login");
+        window.location.replace("#/login")
     }
 
     function loadLocalStorage() {
         if (
             localStorage.getItem("username") !== "undefined" &&
-            localStorage.getItem("password") !== "undefined"
+            localStorage.getItem("username") !== "" &&
+            localStorage.getItem("password") !== "undefined" &&
+            localStorage.getItem("password") !== ""
         ) {
+            console.log("No redirect")
             return true;
         }
+        console.log("redirect")
         return false;
     }
 
