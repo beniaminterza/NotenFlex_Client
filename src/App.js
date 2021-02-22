@@ -15,12 +15,14 @@ export default function App() {
     const [url, setUrl] = useState(window.location.pathname);
     const [user, setUser] = useState();
     const [checkServer, setCheckServer] = useState(false);
+    const [barStatus, setBarStatus] = useState("close");
+    const [menueStatus, setMenueStatus] = useState("open");
 
     useEffect(() => {
         console.log("Check Server");
         if (!url.includes("/login") && !url.includes("/register")) {
             if (!loadLocalStorage()) {
-                console.log("it should redirect !!")
+                console.log("it should redirect !!");
                 redirect();
             } else {
                 setUser(localStorage.getItem("username"));
@@ -50,7 +52,7 @@ export default function App() {
 
     function redirect() {
         //window.location.replace(window.location.pathname + "#/login");
-        window.location.replace("#/login")
+        window.location.replace("#/login");
     }
 
     function loadLocalStorage() {
@@ -60,18 +62,33 @@ export default function App() {
             localStorage.getItem("password") !== "undefined" &&
             localStorage.getItem("password") !== ""
         ) {
-            console.log("No redirect")
+            console.log("No redirect");
             return true;
         }
-        console.log("redirect")
+        console.log("redirect");
         return false;
     }
 
     return (
         <Router basename={process.env.PUBLIC_URL}>
             <div className="app">
-                <Sidebar url={url} setUrl={setUrl} user={user} />
-
+                <Sidebar
+                    url={url}
+                    setUrl={setUrl}
+                    user={user}
+                    barStatus={barStatus}
+                    setBarStatus={setBarStatus}
+                    setMenueStatus={setMenueStatus}
+                />
+                <div
+                    className={`menueIcon ${menueStatus}`}
+                    onClick={() => {
+                        setMenueStatus("close");
+                        setBarStatus("open");
+                    }}
+                >
+                    <h4>Menue</h4>
+                </div>
                 <Switch>
                     <Route path="/" exact>
                         <Home setUrl={setUrl} />

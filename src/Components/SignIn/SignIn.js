@@ -48,7 +48,6 @@ export default function SignIn({ setUser }) {
                             <p>Username</p>
                             <InputC
                                 type="text"
-                                width="284px"
                                 name=""
                                 placeholder="Username"
                                 value={username}
@@ -59,7 +58,6 @@ export default function SignIn({ setUser }) {
                             <p>Password</p>
                             <InputC
                                 type="password"
-                                width="284px"
                                 name=""
                                 placeholder="Password"
                                 value={password}
@@ -69,7 +67,7 @@ export default function SignIn({ setUser }) {
 
                         <div className="input button">
                             <div onClick={checkInput}>
-                                <Button name="Login" />
+                                <button>Login</button>
                             </div>
                             <p style={{ color: "#FF6D6D" }} className="error">
                                 {error}

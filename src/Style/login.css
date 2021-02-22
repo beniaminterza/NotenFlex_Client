@@ -5,7 +5,7 @@
 }
 
 .login {
-    z-index: 1;
+    z-index: 11;
     background-color: white;
     height: 100vh;
     width: 50%;
@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 2rem;
 }
 
 .login h1 {
@@ -21,17 +21,30 @@
 }
 
 .login .linie {
-    width: 300px;
+    width: 90%;
+    max-width: 20rem;
+}
+
+.login .button {
+    width: 90%;
+    max-width: 20rem;
 }
 
 .login button {
-    width: 300px;
+    width: 100%;
 }
+.login input{
+    width: calc(100% - 0.875rem)
+} 
+
 
 .login .input {
+    width: 90%;
+    max-width: 20rem;
+
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
 }
 
 .login .button p {
@@ -62,8 +75,8 @@
 }
 
 .presentation .square {
-    width: 120px;
-    height: 120px;
+    width: 11.25rem;
+    height: 11.25rem;
     background-color: #256fdf;
     opacity: 10%;
     position: absolute;
@@ -76,8 +89,8 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 75px 130px 75px;
-    border-color: transparent transparent rgba(37, 111, 223, 0.1)transparent;
+    border-width: 0 70.3125rem 12rem 70.3125rem;
+    border-color: transparent transparent rgba(37, 111, 223, 0.1) transparent;
     position: absolute;
     transform: rotate(27deg);
     bottom: 200px;
@@ -88,7 +101,6 @@
     width: 250px;
     margin-bottom: 90px;
 }
-
 
 .presentation .infos {
     display: flex;
@@ -107,7 +119,7 @@
     margin-right: 200px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 2rem;
 }
 
 .presentation .linie {
@@ -115,7 +127,6 @@
 }
 
 @media only screen and (max-width: 1300px) {
-
     .login {
         width: 100%;
     }

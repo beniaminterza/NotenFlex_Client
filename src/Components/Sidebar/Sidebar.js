@@ -5,8 +5,18 @@ import SidebarAccount from "./SidebarAccount";
 import logo from "../../Photos/logo.svg";
 
 export default function Sidebar(props) {
+    function closeHandler() {
+        props.setBarStatus("close");
+        props.setMenueStatus("open");
+    }
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${props.barStatus}`}>
+            <h2 className="back" onClick={closeHandler}>
+                x
+            </h2>
+            <div className="menueIcon">
+                <h4>Menu</h4>
+            </div>
             <div className="logoContainer">
                 <img src={logo} alt="logo" className="logo" />
             </div>
@@ -18,6 +28,7 @@ export default function Sidebar(props) {
                 link="/"
                 url={props.url}
                 setUrl={props.setUrl}
+                closeHandler ={closeHandler}
             />
             <SidebarElement
                 icon="fas fa-arrow-circle-up"
@@ -25,6 +36,7 @@ export default function Sidebar(props) {
                 link="/upload"
                 url={props.url}
                 setUrl={props.setUrl}
+                closeHandler ={closeHandler}
             />
             <SidebarElement
                 icon="fas fa-user"
@@ -32,6 +44,7 @@ export default function Sidebar(props) {
                 link={`/profile/${props.user}`}
                 altLink="/profile"
                 url={props.url}
+                closeHandler ={closeHandler}
                 setUrl={props.setUrl}
             />
             <h3>Account</h3>
