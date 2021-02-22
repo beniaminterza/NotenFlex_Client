@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../../Style/login.css";
 import InputC from "../InputC";
 import Button from "../../Button";
-import Presentation from "./Presentation";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
@@ -81,7 +80,7 @@ export default function SignIn({ setUser }) {
                             </Link>
                         </div>
                     </div>
-                    <Presentation />
+
                 </div>
             )}
         </div>
