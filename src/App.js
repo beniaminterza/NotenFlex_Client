@@ -18,7 +18,7 @@ export default function App() {
     
     useEffect(() => {
         console.log("Check Server")
-        if (url !== "/NotenFlex_Client/login" && url !== "/NotenFlex_Client/register") {
+        if (url !== "/login" && url !== "/register") {
             if (!loadLocalStorage()) {
                 redirect();
             } else {
@@ -42,7 +42,7 @@ export default function App() {
     }, [checkServer]);
 
     function redirect() {
-        window.location.replace("/NotenFlex_Client/login");
+        window.location.replace("/login");
     }
 
     function loadLocalStorage() {
@@ -56,7 +56,7 @@ export default function App() {
     }
 
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <div className="app">
                 <Sidebar url={url} setUrl={setUrl} user={user} />
 
@@ -64,20 +64,20 @@ export default function App() {
                     <Route path="/" exact>
                         <Home setUrl={setUrl} />
                     </Route>
-                    <Route path="/NotenFlex_Client/upload" exact>
+                    <Route path="/upload" exact>
                         <Upload setUrl={setUrl} />
                     </Route>
                     <Route
-                        path="/NotenFlex_Client/profile/:id"
+                        path="/profile/:id"
                         exact
                         render={(props) => (
                             <Profile setUrl={setUrl} {...props} />
                         )}
                     />
-                    <Route path="/NotenFlex_Client/login" exact>
+                    <Route path="/login" exact>
                         <Login setUser={setUser} />
                     </Route>
-                    <Route path="/NotenFlex_Client/register" exact>
+                    <Route path="/register" exact>
                         <Register setUser={setUser} />
                     </Route>
                 </Switch>

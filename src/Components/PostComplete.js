@@ -49,7 +49,7 @@ export default function PostComplete({
                 color={color}
             />
             <div className="postInformations">
-                <Link to={`/NotenFlex_Client/profile/${user}`} className="user">
+                <Link to={`/profile/${user}`} className="user">
                     <UserLogo name={Array.from(user)[5].toUpperCase()} />
                     <p>{user}</p>
                 </Link>

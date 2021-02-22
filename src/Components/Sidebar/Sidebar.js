@@ -22,15 +22,15 @@ export default function Sidebar(props) {
             <SidebarElement
                 icon="fas fa-arrow-circle-up"
                 name="Upload"
-                link="/NotenFlex_Client/upload"
+                link="/upload"
                 url={props.url}
                 setUrl={props.setUrl}
             />
             <SidebarElement
                 icon="fas fa-user"
                 name="Profile"
-                link={`/NotenFlex_Client/profile/${props.user}`}
-                altLink="/NotenFlex_Client/profile"
+                link={`/profile/${props.user}`}
+                altLink="/profile"
                 url={props.url}
                 setUrl={props.setUrl}
             />

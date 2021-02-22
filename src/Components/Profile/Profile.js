@@ -16,7 +16,7 @@ export default function Profile({ match, setUrl }) {
     const [isFollowing, setIsFollowing] = useState(false)
 
     useEffect(() => {
-        setUrl("/NotenFlex_Client/profile")
+        setUrl("/profile")
     }, []);
 
     useEffect(() => {
@@ -67,7 +67,7 @@ export default function Profile({ match, setUrl }) {
                                 posts={element.posts}
                                 avgMark={element.averageMark}
                                 setSearch={setSearch}
-                                link={`/NotenFlex_Client/profile/${element.user}`}
+                                link={`/profile/${element.user}`}
                                 key={Math.random() * 10000}
                                 setUser={setUser}
                                 follow={element.isFollowing}

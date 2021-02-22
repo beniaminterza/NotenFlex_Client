@@ -18,7 +18,7 @@ export default function Upload({ setUrl }) {
     const [note, setNote] = useState("9");
 
     useEffect(() => {
-        setUrl("/NotenFlex_Client/upload");
+        setUrl("/upload");
     }, []);
 
     function publish() {
