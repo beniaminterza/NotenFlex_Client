@@ -18,7 +18,7 @@ export default function App() {
     
     useEffect(() => {
         console.log("Check Server")
-        if (url !== "/login" && url !== "/register") {
+        if (!url.includes("/login") && !url.includes("/register")) {
             if (!loadLocalStorage()) {
                 redirect();
             } else {
@@ -42,7 +42,7 @@ export default function App() {
     }, [checkServer]);
 
     function redirect() {
-        window.location.replace("/login");
+        window.location.replace("/#/login");
     }
 
     function loadLocalStorage() {

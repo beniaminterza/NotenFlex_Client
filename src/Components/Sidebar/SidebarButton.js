@@ -5,7 +5,7 @@ export default function SidebarButton(props) {
     function logOut() {
         localStorage.setItem("password", "");
         localStorage.setItem("username", "");
-        window.location.replace("/login");
+        window.location.replace(window.location.pathname+"#/login");
     }
 
     return (

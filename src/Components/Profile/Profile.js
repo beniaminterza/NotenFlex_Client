@@ -13,15 +13,21 @@ export default function Profile({ match, setUrl }) {
     const [search, setSearch] = useState("");
     const [profiles, setProfiles] = useState([]);
     const [realPosts, setRealPosts] = useState([]);
-    const [isFollowing, setIsFollowing] = useState(false)
+    const [isFollowing, setIsFollowing] = useState(false);
 
     useEffect(() => {
-        setUrl("/profile")
+        setUrl("/profile");
     }, []);
+
+    // usage
 
     useEffect(() => {
         axios
-            .get(`http://localhost:9998/NFlex/getUserInfo?user=${user}&myUser=${localStorage.getItem("username")}`)
+            .get(
+                `http://localhost:9998/NFlex/getUserInfo?user=${user}&myUser=${localStorage.getItem(
+                    "username"
+                )}`
+            )
             .then((response) => {
                 let data = response.data;
                 setLikes(data.likes);
@@ -30,7 +36,11 @@ export default function Profile({ match, setUrl }) {
             });
 
         axios
-            .get(`http://localhost:9998/NFlex/getAllUserPosts?user=${user}&myUser=${localStorage.getItem("username")}`)
+            .get(
+                `http://localhost:9998/NFlex/getAllUserPosts?user=${user}&myUser=${localStorage.getItem(
+                    "username"
+                )}`
+            )
             .then((response) => {
                 setRealPosts(
                     response.data.map((element) => (
@@ -46,7 +56,7 @@ export default function Profile({ match, setUrl }) {
                             follow={element.isFollowing}
                             key={element.postID}
                             postID={element.postID}
-                            myUser = {localStorage.getItem("username")}
+                            myUser={localStorage.getItem("username")}
                         />
                     ))
                 );
@@ -56,9 +66,13 @@ export default function Profile({ match, setUrl }) {
     useEffect(() => {
         if (search.length !== 0)
             axios
-                .get(`http://localhost:9998/NFlex/searchUser?search=${search}&myUser=${localStorage.getItem("username")}`)
+                .get(
+                    `http://localhost:9998/NFlex/searchUser?search=${search}&myUser=${localStorage.getItem(
+                        "username"
+                    )}`
+                )
                 .then((response) => {
-                    console.log(response.data)
+                    console.log(response.data);
                     setProfiles(
                         response.data.map((element) => (
                             <ProfileDescribtion
@@ -98,7 +112,7 @@ export default function Profile({ match, setUrl }) {
                             posts={posts}
                             avgMark={avgMark}
                             follow={isFollowing}
-                            main ={true} 
+                            main={true}
                         />
                         {realPosts}
                     </div>
