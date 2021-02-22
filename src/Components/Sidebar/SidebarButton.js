@@ -5,7 +5,7 @@ export default function SidebarButton(props) {
     function logOut() {
         localStorage.setItem("password", "");
         localStorage.setItem("username", "");
-        window.location.replace("/login");
+        window.location.replace("/NotenFlex_Client/login");
     }
 
     return (

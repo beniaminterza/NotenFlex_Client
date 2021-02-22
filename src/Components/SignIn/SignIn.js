@@ -78,7 +78,7 @@ export default function SignIn({ setUser }) {
 
                         <div className="input button grey">
                             <p style={{ color: "#9ba6c4" }}>New NFlex user?</p>
-                            <Link to="/register/">
+                            <Link to="/NotenFlex_Client/register/">
                                 <Button name="Register" />
                             </Link>
                         </div>

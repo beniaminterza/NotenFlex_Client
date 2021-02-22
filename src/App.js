@@ -18,7 +18,7 @@ export default function App() {
     
     useEffect(() => {
         console.log("Check Server")
-        if (url !== "/login" && url !== "/register") {
+        if (url !== "/NotenFlex_Client/login" && url !== "/NotenFlex_Client/register") {
             if (!loadLocalStorage()) {
                 redirect();
             } else {
@@ -42,7 +42,7 @@ export default function App() {
     }, [checkServer]);
 
     function redirect() {
-        window.location.replace("/login");
+        window.location.replace("/NotenFlex_Client/login");
     }
 
     function loadLocalStorage() {
@@ -64,20 +64,20 @@ export default function App() {
                     <Route path="/" exact>
                         <Home setUrl={setUrl} />
                     </Route>
-                    <Route path="/upload" exact>
+                    <Route path="/NotenFlex_Client/upload" exact>
                         <Upload setUrl={setUrl} />
                     </Route>
                     <Route
-                        path="/profile/:id"
+                        path="/NotenFlex_Client/profile/:id"
                         exact
                         render={(props) => (
                             <Profile setUrl={setUrl} {...props} />
                         )}
                     />
-                    <Route path="/login" exact>
+                    <Route path="/NotenFlex_Client/login" exact>
                         <Login setUser={setUser} />
                     </Route>
-                    <Route path="/register" exact>
+                    <Route path="/NotenFlex_Client/register" exact>
                         <Register setUser={setUser} />
                     </Route>
                 </Switch>

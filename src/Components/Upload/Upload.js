@@ -18,7 +18,7 @@ export default function Upload({ setUrl }) {
     const [note, setNote] = useState("9");
 
     useEffect(() => {
-        setUrl("/upload");
+        setUrl("/NotenFlex_Client/upload");
     }, []);
 
     function publish() {
@@ -34,9 +34,9 @@ export default function Upload({ setUrl }) {
             beschreibung: beschreibung,
             note: note,
             color: color,
-            date: datum
+            date: datum,
         };
-        console.log(data)
+        console.log(data);
         axios
             .post("http://localhost:9998/NFlex/addPost", data, axiosConfig)
             .then((response) => {

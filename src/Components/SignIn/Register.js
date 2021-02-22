@@ -100,7 +100,7 @@ export default function Register({ setUser }) {
                             <p style={{ color: "#9ba6c4" }}>
                                 Already a NFlex user?
                             </p>
-                            <Link to="/login/">
+                            <Link to="/NotenFlex_Client/login/">
                                 <Button name="Login" />
                             </Link>
                         </div>
